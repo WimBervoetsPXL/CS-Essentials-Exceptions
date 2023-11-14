@@ -53,7 +53,7 @@ namespace Debugging
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Er is een onverwachte fout opgetreden.");
+                MessageBox.Show($"Er is een onverwachte fout opgetreden: {ex.Message}");
             }
             finally
             {
