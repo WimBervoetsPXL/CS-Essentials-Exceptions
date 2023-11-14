@@ -28,7 +28,7 @@ namespace Debugging
 
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
         {
-            this.Cursor = Cursors.Wait;
+            
 
             string input1 = TxtGetal1.Text;
             string input2 = TxtGetal2.Text;
@@ -37,11 +37,15 @@ namespace Debugging
 
             try
             {
+                this.Cursor = Cursors.Wait;
+
                 Thread.Sleep(2000);
                 getal1 = int.Parse(input1);
                 getal2 = int.Parse(input2);
 
                 LblResult.Content = getal1 / getal2;
+
+                //this.Cursor = null;
             }
             catch (DivideByZeroException)
             {
@@ -69,6 +73,8 @@ namespace Debugging
                     return 1;
                 case "twee":
                     return 2;
+                case "drie":
+                    return 3;
                 default:
                     throw new Exception("Dit is geen geldig woord");
             }
